@@ -1,5 +1,7 @@
 import ast
-import sublime, sublime_plugin
+
+import sublime
+import sublime_plugin
 
 
 class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
@@ -15,14 +17,14 @@ class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
             st, end = region.begin(), region.end()
 
             if (self.view.score_selector(st, 'source.python') < 1 or
-                self.view.score_selector(end, 'source.python') < 1):
+                    self.view.score_selector(end, 'source.python') < 1):
                 print("Selected region is not Python code!")
             else:
                 #find all the function regions that are in the selection zone
                 for fr in fncregions:
                     fst, fend = fr.begin(), fr.end()
                     if (fst < st < fend or fst < end < fend or
-                        st < fst < end or st < fend < end):
+                            st < fst < end or st < fend < end):
                         fncset.add((fst, fend))  # sets require hashable types
 
         wholefile = self.view.substr(sublime.Region(0, self.view.size()))
@@ -31,7 +33,6 @@ class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
         stlinetoastfunc = dict([(n.lineno, n) for n in ast.walk(tree)
                                 if isinstance(n, ast.FunctionDef)])
 
-        print('fnc',fncset)
         for sti, endi in fncset:
             stline = self.view.rowcol(sti)[0] + 1
             astfunc = stlinetoastfunc[stline]
@@ -77,7 +78,6 @@ class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
 
         return '\n'.join([('' if l == '' else indentstr) + l for l in lines])
 
-
     def get_modified_docstr(self, astfunc, olddoc):
         """
         Returns a string with the new docstring
@@ -101,4 +101,3 @@ class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
             defaults.append(None)
 
         return params, defaults
-
