@@ -3,4 +3,11 @@ import sublime, sublime_plugin
 
 class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        self.view.insert(edit, 0, "Hellao, World!")
+        """
+        fasf
+        """
+        for region in self.view.sel():
+            point = region.b
+            print('scope:"{0!s}", sname:"{1!s}"'.format(
+                  self.view.extract_scope(point),
+                  self.view.scope_name(point)))
