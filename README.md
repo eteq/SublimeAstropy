@@ -8,7 +8,7 @@ the [Astropy](http://www.astropy.org) style using
 Installing/Using
 ----------------
 To use this, just clone this repository into your sublime text ``Packages``
-directory (with the default name ``SublimeAstropy``).  You may also want to 
-add a "path" entry in the ``astropyTest.sublime-build`` file pointing to the
-directory indicating which python interpreter is the right one.  That should 
-be all you need to do!
+directory (with the default name ``SublimeAstropy``).  You may also probably 
+need to edit the "path" and "working_dir" entries in the 
+``astropyTest.sublime-build`` file pointing to point to the python 
+interpreter's directory and the path to the astropy source.
