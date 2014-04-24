@@ -2,8 +2,7 @@
 	"cmd": ["python", "$packages/User/astropytest_invoke.py", "$file"],
 	"working_dir": "/Users/erik/src/astropy",
 	"file_regex": "(.+):([0-9]+):() (.*)$",
-	"path": "/opt/local/bin",
-
+	
 	"variants": [
 	{
 		"name": "Test with Long Tracebacks",
