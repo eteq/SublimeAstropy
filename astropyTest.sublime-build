@@ -1,24 +1,24 @@
 {
-	"cmd": ["python", "$packages/User/astropytest_invoke.py", "$file"],
-	"working_dir": "/Users/erik/src/astropy",
+	"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file"],
+	"working_dir": "/home/erik/src/astropy",
 	"file_regex": "(.+):([0-9]+):() (.*)$",
 	
 	"variants": [
 	{
 		"name": "Test with Long Tracebacks",
-		"cmd": ["python", "$packages/User/astropytest_invoke.py", "$file", "--tb", "long"]
+		"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file", "--tb", "long"]
 	},
 	{
 		"name": "Test with Short Tracebacks",
-		"cmd": ["python", "$packages/User/astropytest_invoke.py", "$file", "--tb", "short"]
+		"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file", "--tb", "short"]
 	},
 	{
 		"name": "Test with Line Tracebacks",
-		"cmd": ["python", "$packages/User/astropytest_invoke.py", "$file", "--tb", "line"]
+		"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file", "--tb", "line"]
 	},
 	{
 		"name": "Test with Native Tracebacks",
-		"cmd": ["python", "$packages/User/astropytest_invoke.py", "$file", "--tb", "native"]
+		"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file", "--tb", "native"]
 	}
 	]
 }
