@@ -20,6 +20,10 @@
 	{
 		"name": "Test with Native Tracebacks",
 		"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file", "--tb", "native"]
+	},
+	{
+		"name": "Test with Remote data",
+		"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file", "--remote-data"]
 	}
 	]
 }
