@@ -17,10 +17,11 @@ while not found_path:
         raise ValueError('at root dir but did not find a setup.py')
     paths.append('..')
 
-if file_name.startswith('test_'):
+if file_name.startswith('test_') or file_name.endswith('.rst'):
     file_path = os.path.join(file_dir, file_name)
     dash_t_path = file_path[len(found_path)+1:]
     test_selector = '-t ' + dash_t_path
+
 else:
     file_path = os.path.join(file_dir, file_name)
     test_selector = '-P ' + file_dir[len(found_path)+1+len('astropy/'):]
