@@ -1,3 +1,4 @@
 [
     { "caption": "SublimeAstropy: Update Docstring", "command": "update_numpydocstr_for_func" },
+    { "caption": "SublimeAstropy: Run Selection As Test", "command": "run_astropy_test" }
 ]

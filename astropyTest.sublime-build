@@ -1,8 +1,8 @@
 {
 	"cmd": ["python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file"],
-	"working_dir": "/home/erik/src/astropy",
+	"working_dir": "/Users/erik/src/astropy",
 	"file_regex": "(.+):([0-9]+):() (.*)$",
-	"path": "/usr/bin/",
+	"path": "/opt/local/bin/",
 	
 	"variants": [
 	{

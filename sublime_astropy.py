@@ -101,3 +101,18 @@ class UpdateNumpydocstrForFuncCommand(sublime_plugin.TextCommand):
             defaults.append(None)
 
         return params, defaults
+
+class RunAstropyTest(sublime_plugin.TextCommand):
+    exec_params={
+    "cmd": ["/opt/local/bin/python", "$packages/SublimeAstropy/astropytest_invoke.py", "$file"],
+    "working_dir": "/Users/erik/src/astropy",
+    "file_regex": "(.+):([0-9]+):() (.*)$",
+    "path": "/opt/local/bin/"
+    }
+    def run(self, edit):
+        window = self.view.window()
+        prms = dict(RunAstropyTest.exec_params)
+        prms['cmd'][1] = prms['cmd'][1].replace('$packages', sublime.packages_path())
+        prms['cmd'][2] = prms['cmd'][2].replace('$file', self.view.file_name())
+        print(prms)
+        window.run_command("exec", prms)
