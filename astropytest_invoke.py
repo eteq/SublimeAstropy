@@ -33,7 +33,7 @@ if len(sys.argv) > 2:
     pytest_args = '--args="{0}" '.format(' '.join(sys.argv[2:]).replace('"', "'"))
 else:
     pytest_args = ''
-
+print('chnging to',found_path)
 os.chdir(found_path)
 pycmd = 'setup.py test ' + pytest_args + test_selector
 
